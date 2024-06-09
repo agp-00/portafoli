@@ -6,7 +6,9 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <header>
@@ -32,8 +34,8 @@
                         <h2>Yo soy Adrián</h2>
                         <h3>Profesional Diseñador web & Desarrollador web</h3>
                         <div class="hero-buttons">
-                            <a href="#contacto" type="button" class="btn">Contacto</a>
-                            <a href="#contacto" class="btn">Descarga mi CV</a>
+                          <a href="#contacto" type="button" class="btn">Contacto</a>
+                            <a href="./images/formato-curriculum-vitae-rellenar-editar-350x495.jpg" download="curriculum" class="btn">Descargar mi CV</a>
                         </div>
                     </div>
                     <div class="hero-image">
@@ -150,36 +152,46 @@
         <section id="contacto" class="contact-container">
           <form>
             <!--left--------------------------------------->
-            <div class="contact-form ">
+            <div class="contact-form">
               <h1 class="c-l-heading">
                 <font style="border-bottom: 3px solid #1ED98B;">Write us</font>
               </h1>
               <!--name-------->
               <div class="name">
-                <font >Name</font>
-                <input type="text" placeholder="Full Name" />
+                <font>Name</font>
+                <input type="text" placeholder="Full Name" required />
               </div>
               <!--email-------->
               <div class="email">
                 <font>Email</font>
-                <input type="email" placeholder="Example@gmail.com" />
+                <input type="email" name="email" placeholder="Example@gmail.com" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required title="Por favor, introduce un correo electrónico válido." />
               </div>
             </div>
             <!--right------------------------------------------->
             <div class="form-right">
-            <div class="contact-form textarea">
-              <!--message-------->
-              <div class="message">
-                <font>Message</font>
-                <textarea name="message" rows="5" cols="20" placeholder="Write Message..."></textarea>
+              <div class="contact-form textarea">
+                <!--message-------->
+                <div class="message">
+                  <font>Message</font>
+                  <textarea name="message" rows="5" cols="20" placeholder="Write Message..." required></textarea>
+                </div>
+                <!--submit-btn------------>
+                <button type="submit" class="btn">Contáctame</button>
               </div>
-              <!--submit-btn------------>
-              <button onclick="location.href='../Newsletter/index.html'" type="button" class="btn">Contáctame</button>
             </div>
-            </div>
-      
           </form>
       
+
+          <script>
+            // Agregar un evento de escucha para el envío del formulario
+            document.getElementById("contacto").addEventListener("submit", function(event) {
+              // Redirigir a otra página después de enviar el formulario
+              window.location.href = '../Newsletter/index.html';
+              // Prevenir el envío predeterminado del formulario
+              event.preventDefault();
+            });
+          </script>
+
         </section>
         
     </main>
